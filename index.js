@@ -1,7 +1,7 @@
 import express from 'express';
 const app = express();
 
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 import clientesController from "./controllers/clientesController.js";
 import pedidosController from "./controllers/pedidosController.js";
@@ -11,6 +11,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 app.use("/", clientesController);
 app.use("/", pedidosController);

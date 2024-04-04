@@ -1,7 +1,8 @@
 import express from 'express';
 const router = express.Router();
+import ClienteService from '../services/ClienteService.js';
 
-router.get("/clientes",function(req,res){
+router.get("/clientes",(req,res) =>{
     let titulo = "Clientes";
     let ativo = 2;
     const listaClientes = [
