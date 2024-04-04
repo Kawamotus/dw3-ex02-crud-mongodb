@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0f0f0f;">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-center align-items-center" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <% if(ativo == 1){ %>
+          <a class="nav-item nav-link active" href="/">Home</a>
+        <%}else{ %>
+          <a class="nav-item nav-link" href="/">Home</a>
+        <%} %>
+        
+        <% if(ativo == 2){ %>
+          <a class="nav-item nav-link active" href="/clientes">Clientes</a>
+        <%}else{ %>
+          <a class="nav-item nav-link" href="/clientes">Clientes</a>
+        <%} %>
+
+        <% if(ativo == 3){ %>
+          <a class="nav-item nav-link active" href="/pedidos">Pedidos</a>
+        <%}else{ %>
+          <a class="nav-item nav-link" href="/pedidos">Pedidos</a>
+        <%} %>
+
+        <% if(ativo == 4){ %>
+          <a class="nav-item nav-link active" href="/produtos">Produtos</a>
+        <%}else{ %>
+          <a class="nav-item nav-link" href="/produtos">Produtos</a>
+        <%} %>
+      </div>
+    </div>
+  
+  </nav>

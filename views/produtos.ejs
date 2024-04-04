@@ -1,0 +1,154 @@
+<%- include('partials/header.ejs') %> 
+<%- include('partials/navbar.ejs') %> 
+
+<div class='container'>
+    <br>
+    <h2 class="text-center">Produtos</h2><br>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Categoria</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% let i = 1 %>
+            <% produtos.forEach(produto =>{ %>
+            <tr>
+                <th scope="row"><%= i %></th>
+                <td><%= produto.nome %></td>
+                <td>R$<%= produto.preco %></td>
+                <td><%= produto.categoria %></td>
+            </tr>
+            <% i++; %>
+            <% }) %>
+            </tbody>
+        </table>
+        <br><br><br>
+
+        <%let perifericos = produtos.filter(function(obj){return obj.categoria == "Periféricos"}); %>
+
+        <%let computadores = produtos.filter(function(obj){return obj.categoria == "Computadores"}); %>
+
+        <%let armazenamento = produtos.filter(function(obj){return obj.categoria == "Armazenamento"}); %>
+
+        <%let redes = produtos.filter(function(obj){return obj.categoria == "Redes"}); %>
+
+        <%let componentes = produtos.filter(function(obj){return obj.categoria == "Componentes"}); %>
+
+        <h2 class="text-center">Separados por categoria:</h2><br>
+
+        <h3 class="text-center">Periféricos</h3>
+        <table class="table table-bordered table-hover table-sm">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Preço</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% i = 1 %>
+            <% perifericos.forEach(produto =>{ %>
+            <tr>
+                <th scope="row"><%= i %></th>
+                <td><%= produto.nome %></td>
+                <td>R$<%= produto.preco %></td>
+            </tr>
+            <% i++; %>
+            <% }) %>
+            </tbody>
+        </table>
+        <br>
+        <h3 class="text-center">Computadores</h3>
+        <table class="table table-bordered table-hover table-sm">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Preço</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% i = 1 %>
+            <% computadores.forEach(produto =>{ %>
+            <tr>
+                <th scope="row"><%= i %></th>
+                <td><%= produto.nome %></td>
+                <td>R$<%= produto.preco %></td>
+            </tr>
+            <% i++; %>
+            <% }) %>
+            </tbody>
+        </table>
+        <br>
+        <h3 class="text-center">Armazenamento</h3>
+        <table class="table table-bordered table-hover table-sm">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Preço</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% i = 1 %>
+            <% armazenamento.forEach(produto =>{ %>
+            <tr>
+                <th scope="row"><%= i %></th>
+                <td><%= produto.nome %></td>
+                <td>R$<%= produto.preco %></td>
+            </tr>
+            <% i++; %>
+            <% }) %>
+            </tbody>
+        </table>
+        <br>
+        <h3 class="text-center">Redes</h3>
+        <table class="table table-bordered table-hover table-sm">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Preço</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% i = 1 %>
+            <% redes.forEach(produto =>{ %>
+            <tr>
+                <th scope="row"><%= i %></th>
+                <td><%= produto.nome %></td>
+                <td>R$<%= produto.preco %></td>
+            </tr>
+            <% i++; %>
+            <% }) %>
+            </tbody>
+        </table>
+        <br>
+        <h3 class="text-center">Componentes</h3>
+        <table class="table table-bordered table-hover table-sm">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Preço</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% i = 1 %>
+            <% componentes.forEach(produto =>{ %>
+            <tr>
+                <th scope="row"><%= i %></th>
+                <td><%= produto.nome %></td>
+                <td>R$<%= produto.preco %></td>
+            </tr>
+            <% i++; %>
+            <% }) %>
+            </tbody>
+        </table>
+</div>
+
+<%- include('partials/footer.ejs') %>  

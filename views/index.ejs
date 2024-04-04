@@ -1,0 +1,30 @@
+<%- include('partials/header.ejs') %> 
+<%- include('partials/navbar.ejs') %> 
+<br>
+<section class="container" id="portfolio">
+    <div class="container px-4 px-lg-5">
+        <div class="content-section-heading text-center">
+            <h2 class="mb-5">Produtos mais recentes</h2>
+        </div>
+        <div class="row gx-0">
+
+            <% produtosHome.forEach(prod =>{ %>
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="h2"><%= prod.titulo %></div>
+                                <p class="mb-0"><%= prod.descricao %></p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="imgs/<%=prod.imagem %>" alt="..." />
+                    </a>
+                </div>
+             <%})%>
+
+        </div>
+    </div>
+</section>
+
+
+<%- include('partials/footer.ejs') %> 
