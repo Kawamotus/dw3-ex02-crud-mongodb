@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "660f25c2eeb2e34f804c9eff"
+  },
+  "nome": "Maria",
+  "cpf": "987.654.321-00",
+  "endereco": "Rua B, 456"
+},
+{
+  "_id": {
+    "$oid": "660f25d1eeb2e34f804c9f01"
+  },
+  "nome": "José",
+  "cpf": "456.789.123-00",
+  "endereco": "Rua C, 789"
+},
+{
+  "_id": {
+    "$oid": "660f25e3eeb2e34f804c9f03"
+  },
+  "nome": "Ana",
+  "cpf": "321.654.987-00",
+  "endereco": "Rua D, 246"
+},
+{
+  "_id": {
+    "$oid": "660f25efeeb2e34f804c9f05"
+  },
+  "nome": "Pedro",
+  "cpf": "789.123.456-00",
+  "endereco": "Rua E, 135"
+},
+{
+  "_id": {
+    "$oid": "660f2609eeb2e34f804c9f07"
+  },
+  "nome": "Carla",
+  "cpf": "654.987.321-00",
+  "endereco": "Rua F, 579"
+},
+{
+  "_id": {
+    "$oid": "660f2672eeb2e34f804c9f09"
+  },
+  "nome": "Mariana",
+  "cpf": "234.567.890-00",
+  "endereco": "Rua G, 753"
+},
+{
+  "_id": {
+    "$oid": "660f267feeb2e34f804c9f0b"
+  },
+  "nome": "Lucas",
+  "cpf": "876.543.210-00",
+  "endereco": "Rua H, 984"
+}]
