@@ -14,6 +14,17 @@ router.get('/pedidos', (req, res)=>{
         });
     })
     
+});
+
+router.post("/pedidos/novoPedido", (req, res) => {
+    PedidoService.Create(
+        req.body.nome,
+        req.body.numPedido,
+        req.body.produto,
+        req.body.quantidade,
+        req.body.precoUnitario
+    );
+    res.redirect("/pedidos")
 })
 
 export default router;

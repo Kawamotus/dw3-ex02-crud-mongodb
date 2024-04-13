@@ -7,6 +7,17 @@ class PedidoService {
     SelectAll(){
         return Pedido.find();
     }
+
+    Create(nome, numPedido, produto, quantidade, precoUnitario){
+        const novoPedido = new Pedido({
+            nome: nome,
+            numPedido: numPedido,
+            produto: produto,
+            quantidade: quantidade,
+            precoUnitario: precoUnitario
+        });
+        novoPedido.save();
+    }
 }
 
 export default new PedidoService();

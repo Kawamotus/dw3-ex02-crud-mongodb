@@ -8,6 +8,22 @@ class ClienteService{
         return Cliente.find();
     }
 
+    Create(nome, cpf, endereco){
+        const novoCliente = new Cliente({
+            nome: nome,
+            cpf: cpf, 
+            endereco: endereco
+        });
+        novoCliente.save();
+    }
+
+    Delete(id){
+        Cliente.findByIdAndDelete(id).then(() =>{
+            console.log("Cliente com id " + id + " foi deletado com sucesso!");
+        }).catch(err =>{
+            console.log(err);
+        });
+    }
     
 }
 

@@ -14,5 +14,20 @@ router.get("/clientes",(req,res) =>{
     });
 });
 
+router.post("/clientes/novoCliente", (req, res) =>{
+    ClienteService.Create(
+        req.body.nome,
+        req.body.cpf,
+        req.body.endereco
+    );
+    res.redirect('/clientes');
+});
+
+router.get("/clientes/excluir/:id", (req, res) => {
+    const id = req.params.id;
+    ClienteService.Delete(id);
+    res.redirect("/clientes");
+});
+
 
 export default router;

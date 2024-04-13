@@ -16,6 +16,15 @@ router.get('/produtos', (req, res)=>{
     
 });
 
+router.post("/produtos/novoProduto", (req, res) => {
+    ProdutoService.Create(
+        req.body.nome,
+        req.body.preco,
+        req.body.categoria
+    );
+    res.redirect("/produtos");
+});
+
 
 
 export default router;
