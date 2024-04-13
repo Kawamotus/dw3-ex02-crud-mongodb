@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "6619ed573cf0f85c7760cfc8"
+  },
+  "nome": "Notebook",
+  "preco": 1999.99,
+  "categoria": "Computadores"
+},
+{
+  "_id": {
+    "$oid": "6619ed613cf0f85c7760cfca"
+  },
+  "nome": "Mouse",
+  "preco": 29.99,
+  "categoria": "Periféricos"
+},
+{
+  "_id": {
+    "$oid": "6619ed6d3cf0f85c7760cfcc"
+  },
+  "nome": "Teclado",
+  "preco": 49.99,
+  "categoria": "Periféricos"
+},
+{
+  "_id": {
+    "$oid": "6619ed783cf0f85c7760cfce"
+  },
+  "nome": "Monitor",
+  "preco": 299.99,
+  "categoria": "Periféricos"
+},
+{
+  "_id": {
+    "$oid": "6619edc63cf0f85c7760cfd0"
+  },
+  "nome": "Impressora",
+  "preco": 149.99,
+  "categoria": "Periféricos"
+},
+{
+  "_id": {
+    "$oid": "6619edd13cf0f85c7760cfd2"
+  },
+  "nome": "Disco Rígido (HD)",
+  "preco": 99.99,
+  "categoria": "Armazenamento"
+},
+{
+  "_id": {
+    "$oid": "6619edda3cf0f85c7760cfd4"
+  },
+  "nome": "SSD",
+  "preco": 129.99,
+  "categoria": "Armazenamento"
+},
+{
+  "_id": {
+    "$oid": "6619ede53cf0f85c7760cfd6"
+  },
+  "nome": "Roteador Wi-Fi",
+  "preco": 79.99,
+  "categoria": "Redes"
+},
+{
+  "_id": {
+    "$oid": "6619edf23cf0f85c7760cfd8"
+  },
+  "nome": "Placa de Vídeo",
+  "preco": 399.99,
+  "categoria": "Componentes"
+},
+{
+  "_id": {
+    "$oid": "6619edfc3cf0f85c7760cfda"
+  },
+  "nome": "Placa-Mãe",
+  "preco": 149.99,
+  "categoria": "Componentes"
+}]
