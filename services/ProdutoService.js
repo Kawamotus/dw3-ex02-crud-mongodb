@@ -16,6 +16,14 @@ class ProdutoService{
         });
         novoProduto.save();
     }
+
+    Delete(id){
+        Produto.findByIdAndDelete(id).then(()=>{
+            console.log("Produto " + id + " deletado com sucesso");
+        }).catch(err =>{
+            console.log(err);
+        });
+    }
 }
 
 export default new ProdutoService();

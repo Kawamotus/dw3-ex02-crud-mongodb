@@ -25,6 +25,12 @@ router.post("/pedidos/novoPedido", (req, res) => {
         req.body.precoUnitario
     );
     res.redirect("/pedidos")
-})
+});
+
+router.get("/pedidos/excluir/:id", (req, res) =>{
+    const id = req.params.id;
+    PedidoService.Delete(id);
+    res.redirect("/pedidos");
+});
 
 export default router;

@@ -25,6 +25,12 @@ router.post("/produtos/novoProduto", (req, res) => {
     res.redirect("/produtos");
 });
 
+router.get("/produtos/excluir/:id", (req, res) => {
+    const id = req.params.id;
+    ProdutoService.Delete(id);
+    res.redirect("/produtos");
+})
+
 
 
 export default router;

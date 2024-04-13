@@ -12,7 +12,7 @@
                 <label for="">Nome do Produto:</label>
                 <input type="text" name="nome" id="nome" class='form-control' required><br>
                 <label for="">Preço:</label>
-                <input type="text" name="preco" id="preco" class="form-control" required><br>
+                <input type="number" name="preco" id="preco" class="form-control" required><br>
                 <label for="">Categoria:</label>
                 <input type="text" name="categoria" id="categoria" class="form-control" required><br>
                 <button class="btn btn-primary">Cadastrar Produto</button>
@@ -28,6 +28,7 @@
                 <th scope="col">Produto</th>
                 <th scope="col">Preço</th>
                 <th scope="col">Categoria</th>
+                <th scope="col">Ações</th>
             </tr>
             </thead>
             <tbody>
@@ -38,6 +39,10 @@
                 <td><%= produto.nome %></td>
                 <td>R$<%= produto.preco %></td>
                 <td><%= produto.categoria %></td>
+                <td>
+                    <a href="/produtos/excluir/<%=produto._id%>" class="btn btn-danger">Excluir</a>
+                    <a href="#" class="btn btn-info">Editar</a>
+                </td>
             </tr>
             <% i++; %>
             <% }) %>

@@ -18,6 +18,14 @@ class PedidoService {
         });
         novoPedido.save();
     }
+
+    Delete(id){
+        Pedido.findByIdAndDelete(id).then(()=>{
+            console.log("Pedido " + id + " deletado com sucesso!");
+        }).catch(err =>{
+            console.log(err);
+        });
+    }
 }
 
 export default new PedidoService();
