@@ -52,7 +52,7 @@
                 <td>R$<%= total %></td>
                 <td>
                     <a href="/pedidos/excluir/<%=pedido._id%>" class="btn btn-danger" onclick="return confirm('Deseja realmente excluir o pedido de <%=pedido.nome %>?')">Excluir</a>
-                    <a href="#" class="btn btn-info">Editar</a>
+                    <a href="/pedidos/editar/<%=pedido._id%>" class="btn btn-info">Editar</a>
                 </td> 
             </tr>
             <% i++; %>

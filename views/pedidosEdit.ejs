@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/navbar.ejs") %>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Pedido de <%=pedido.nome%></h1>
+        </div>
+        <div class="card-body">
+            <form action="/pedidos/update/<%= pedido._id%>" method="post">
+                <label for="">Nome</label>
+                <input type="text" name="nome" id="nome" class="form-control" value="<%=pedido.nome%>" required><br>
+                <label for="">N° do Pedido:</label>
+                <input type="number" name="numPedido" id="numPedido" class="form-control" value="<%=pedido.numPedido%>" readonly><br>
+                <label for="">Produto</label>
+                <input type="text" name="produto" id="produto" class="form-control" value="<%=pedido.produto%>" required><br>
+                <label for="">Quantidade</label>
+                <input type="number" name="quantidade" id="quantidade" class="form-control" value="<%=pedido.quantidade%>" required><br>
+                <label for="">Preco Unitario</label>
+                <input type="number" name="precoUnitario" id="precoUnitario" class="form-control" value="<%=pedido.precoUnitario%>" required><br>
+                <input type="hidden" name="id" value="<%=pedido._id%>">
+                <button class="btn btn-success">Atualizar Pedido</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

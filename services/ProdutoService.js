@@ -24,6 +24,22 @@ class ProdutoService{
             console.log(err);
         });
     }
+
+    SelectOne(id){
+        return Produto.findOne({_id:id});
+    }
+
+    Update(id, nome, preco, categoria){
+        Produto.findByIdAndUpdate(id, {
+            nome: nome,
+            preco: preco,
+            categoria: categoria
+        }).then(() =>{
+            console.log("Produto " + id + " alterado com sucesso");
+        }).catch(err =>{
+            console.log(err);
+        });
+    }
 }
 
 export default new ProdutoService();

@@ -42,7 +42,7 @@
                 <td><%= cliente.endereco %></td>
                 <td>
                     <a href="/clientes/excluir/<%=cliente._id%>" class="btn btn-danger" onclick="return confirm('Deseja realmente excluir o registro de <%=cliente.nome%>?')">Excluir</a>
-                    <a href="#" class="btn btn-info">Editar</a>
+                    <a href="/clientes/editar/<%=cliente._id%>" class="btn btn-info">Editar</a>
                 </td>
             </tr>
             <% i++; %>

@@ -24,6 +24,22 @@ class ClienteService{
             console.log(err);
         });
     }
+
+    SelectOne(id){
+        return Cliente.findOne({_id: id});
+    }
+
+    Update(id, nome, cpf, endereco){
+        Cliente.findByIdAndUpdate(id, {
+            nome: nome,
+            cpf: cpf,
+            endereco: endereco
+        }).then(()=>{
+            console.log(nome + " atualizado com sucesso!");
+        }).catch(err =>{
+            console.log(err);
+        });
+    }
     
 }
 

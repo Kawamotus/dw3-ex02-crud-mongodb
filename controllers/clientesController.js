@@ -29,5 +29,28 @@ router.get("/clientes/excluir/:id", (req, res) => {
     res.redirect("/clientes");
 });
 
+router.get("/clientes/editar/:id", (req, res) =>{
+    let ativo = 2;
+    const id = req.params.id;
+    ClienteService.SelectOne(id).then((cliente) => {
+        let titulo = ("Editando " + cliente.nome);
+        res.render("clientEdit", {
+            cliente: cliente, 
+            titulo: titulo,
+            ativo: ativo
+        });
+    });
+});
+
+router.post('/clientes/update/:id', (req, res) =>{
+    ClienteService.Update(
+        req.body.id,
+        req.body.nome,
+        req.body.cpf,
+        req.body.endereco
+    );
+    res.redirect("/clientes");
+});
+
 
 export default router;

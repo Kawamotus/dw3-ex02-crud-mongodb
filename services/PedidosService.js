@@ -26,6 +26,25 @@ class PedidoService {
             console.log(err);
         });
     }
+
+    SelectOne(id){
+        return Pedido.findOne({_id: id});
+    }
+
+    Update(id, nome, numPedido, produto, quantidade, precoUnitario){
+        Pedido.findByIdAndUpdate(id, {
+            nome: nome,
+            numPedido: numPedido,
+            produto: produto,
+            quantidade: quantidade,
+            precoUnitario: precoUnitario
+        }).then(() =>{
+            console.log("Dados do pedido " + numPedido + " atualizados com sucesso");
+        }).catch(err =>{
+            console.log(err);
+        });
+
+    }
 }
 
 export default new PedidoService();
