@@ -24,7 +24,7 @@ router.post("/pedidos/novoPedido", (req, res) => {
         req.body.quantidade,
         req.body.precoUnitario
     );
-    res.redirect("/pedidos")
+    res.redirect("/pedidos");
 });
 
 router.get("/pedidos/excluir/:id", (req, res) =>{

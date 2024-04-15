@@ -14,8 +14,14 @@
                 <label for="">Preço:</label>
                 <input type="number" name="preco" id="preco" class="form-control" required><br>
                 <label for="">Categoria:</label>
-                <input type="text" name="categoria" id="categoria" class="form-control" required><br>
-                <button class="btn btn-primary">Cadastrar Produto</button>
+                <select name="categoria" id="categoria" class="form-control" required>
+                    <option value="Periféricos">Periféricos</option>
+                    <option value="Computadores">Computadores</option>
+                    <option value="Armazenamento">Armazenamento</option>
+                    <option value="Redes">Redes</option>
+                    <option value="Componentes">Componentes</option>
+                </select><br>
+                <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
             </form>
         </div>
     </div>

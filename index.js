@@ -6,6 +6,7 @@ import mongoose from 'mongoose';
 import clientesController from "./controllers/clientesController.js";
 import pedidosController from "./controllers/pedidosController.js";
 import produtosController from "./controllers/produtosController.js";
+import usersController from "./controllers/usersController.js";
 
 app.set('view engine', 'ejs');
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/", clientesController);
 app.use("/", pedidosController);
 app.use("/", produtosController);
+app.use("/", usersController);
 
 mongoose.connect("mongodb://localhost:27017/sistemaLoja");
 

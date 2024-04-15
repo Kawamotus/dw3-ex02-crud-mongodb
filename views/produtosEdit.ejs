@@ -1,6 +1,6 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/navbar.ejs') %>
-
+<br>
 <div class="container">
     <div class="card">
         <div class="card-header">
@@ -13,7 +13,15 @@
                 <label for="">Preco</label>
                 <input type="number" name="preco" id="preco" class="form-control" value="<%=produto.preco%>" required><br>
                 <label for="">Categoria</label>
-                <input type="text" name="categoria" id="categoria" value="<%=produto.categoria%>" class="form-control" required><br>
+                <!--<input type="text" name="categoria" id="categoria" value="<%=produto.categoria%>" class="form-control" required>-->
+                <select name="categoria" id="categoria" class="form-control">
+                    <option value="Computadores" <%= produto.categoria == "Computadores" ? "selected" : "" %>>Computadores</option>
+                    <option value="Periféricos" <%= produto.categoria == "Periféricos" ? "selected" : "" %>>Periféricos</option>
+                    <option value="Armazenamento" <%= produto.categoria == "Armazenamento" ? "selected" : "" %>>Armazenamento</option>
+                    <option value="Redes" <%= produto.categoria == "Redes" ? "selected" : "" %>>Redes</option>
+                    <option value="Componentes"<%= produto.categoria == "Componentes" ? "selected" : "" %>>Componentes</option>
+                </select>
+                <br>
                 <button class="btn btn-success">Atualizar Produto</button>
             </form>
         </div>

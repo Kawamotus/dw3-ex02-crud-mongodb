@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/navbar.ejs") %>
+
+<% errLogin = "" %>
+
+<div class="container col-6">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h1>Login</h1>
+        </div>
+        <div class="card-body">
+            <form action="/authenticate" method="post">
+                <p style="color:red; font-size: 0.7em;"><%=errLogin%></p>
+                <label for="">E-mail:</label>
+                <input type="text" name="email" id="email" class="form-control"><br>
+                <label for="">Senha:</label>
+                <input type="password" name="password" id="password" class="form-control"><br>
+                <button type="submit" class="btn btn-success btn-block">Entrar</button>
+            </form>
+            <hr>
+            <h6>Não possui conta? <a href="/cadastro">Cadastre-se</a></h6>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs"); %>

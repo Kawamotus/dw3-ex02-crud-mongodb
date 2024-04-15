@@ -32,7 +32,7 @@ router.get("/produtos/excluir/:id", (req, res) => {
 });
 
 router.get("/produtos/editar/:id", (req, res) => {
-    let ativo = 3;
+    let ativo = 4;
     const id = req.params.id;
     ProdutoService.SelectOne(id).then((produto) =>{
         let titulo = produto.nome;
