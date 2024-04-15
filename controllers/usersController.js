@@ -18,9 +18,11 @@ router.get("/login", (req, res) =>{
 router.get("/cadastro", (req, res) => {
     let ativo = 0;
     let titulo = "Cadastro de administrador";
+    let mensagem;
     res.render("cadastro", {
         titulo: titulo,
-        ativo: ativo
+        ativo: ativo,
+        mensagem: mensagem
     });
 });
 
@@ -37,7 +39,7 @@ router.post("/createUser", (req, res) => {
             res.redirect("/login");
         }
         else{
-            res.send(`E-mail já cadastrado!<br><a href="/cadastro">Tentar novamente </a>`)
+            res.send(`E-mail já cadastrado!<br><a href="/cadastro">Tentar novamente </a>`);
         }
     });
 });
@@ -54,7 +56,7 @@ router.post("/authenticate", (req, res) =>{
                 res.redirect("/");
             }
             else{
-                //return alert("Usuário ou senha incorretos!");       
+                res.send("nao deu certo");
             }
         }
     });
