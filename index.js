@@ -2,6 +2,7 @@ import express from 'express';
 const app = express();
 
 import mongoose from 'mongoose';
+import session from 'express-session';
 
 import clientesController from "./controllers/clientesController.js";
 import pedidosController from "./controllers/pedidosController.js";
@@ -11,6 +12,13 @@ import usersController from "./controllers/usersController.js";
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
+
+app.use(session({
+    secret: "sistemaLojasecret",
+    cookie: {maxAge:3600000},
+    saveUninitialized: false,
+    resave: false
+}));
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());

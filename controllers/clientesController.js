@@ -1,8 +1,9 @@
 import express from 'express';
 const router = express.Router();
 import ClienteService from '../services/ClienteService.js';
+import Auth from "../middleware/Auth.js";
 
-router.get("/clientes",(req,res) =>{
+router.get("/clientes", Auth, (req,res) =>{
     let titulo = "Clientes";
     let ativo = 2;
     ClienteService.SelectAll().then((listaClientes) =>{
@@ -14,7 +15,7 @@ router.get("/clientes",(req,res) =>{
     });
 });
 
-router.post("/clientes/novoCliente", (req, res) =>{
+router.post("/clientes/novoCliente", Auth, (req, res) =>{
     ClienteService.Create(
         req.body.nome,
         req.body.cpf,
@@ -23,13 +24,13 @@ router.post("/clientes/novoCliente", (req, res) =>{
     res.redirect('/clientes');
 });
 
-router.get("/clientes/excluir/:id", (req, res) => {
+router.get("/clientes/excluir/:id", Auth, (req, res) => {
     const id = req.params.id;
     ClienteService.Delete(id);
     res.redirect("/clientes");
 });
 
-router.get("/clientes/editar/:id", (req, res) =>{
+router.get("/clientes/editar/:id", Auth, (req, res) =>{
     let ativo = 2;
     const id = req.params.id;
     ClienteService.SelectOne(id).then((cliente) => {
@@ -42,7 +43,7 @@ router.get("/clientes/editar/:id", (req, res) =>{
     });
 });
 
-router.post('/clientes/update/:id', (req, res) =>{
+router.post('/clientes/update/:id', Auth, (req, res) =>{
     ClienteService.Update(
         req.body.id,
         req.body.nome,

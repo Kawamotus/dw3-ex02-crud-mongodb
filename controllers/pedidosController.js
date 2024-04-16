@@ -1,8 +1,9 @@
 import express from 'express';
 const router = express.Router();
 import PedidoService from "../services/PedidosService.js";
+import Auth from '../middleware/Auth.js';
 
-router.get('/pedidos', (req, res)=>{
+router.get('/pedidos', Auth, (req, res)=>{
     let titulo = "Pedidos";    
     let ativo = 3;
 
@@ -16,7 +17,7 @@ router.get('/pedidos', (req, res)=>{
     
 });
 
-router.post("/pedidos/novoPedido", (req, res) => {
+router.post("/pedidos/novoPedido", Auth, (req, res) => {
     PedidoService.Create(
         req.body.nome,
         req.body.numPedido,
@@ -27,13 +28,13 @@ router.post("/pedidos/novoPedido", (req, res) => {
     res.redirect("/pedidos");
 });
 
-router.get("/pedidos/excluir/:id", (req, res) =>{
+router.get("/pedidos/excluir/:id", Auth, (req, res) =>{
     const id = req.params.id;
     PedidoService.Delete(id);
     res.redirect("/pedidos");
 });
 
-router.get("/pedidos/editar/:id", (req, res) =>{
+router.get("/pedidos/editar/:id", Auth, (req, res) =>{
     let ativo = 3;
     const id = req.params.id;
     PedidoService.SelectOne(id).then((pedido) => {
@@ -48,7 +49,7 @@ router.get("/pedidos/editar/:id", (req, res) =>{
     });
 });
 
-router.post("/pedidos/update/:id", (req, res) =>{
+router.post("/pedidos/update/:id", Auth, (req, res) =>{
     PedidoService.Update(
         req.body.id,
         req.body.nome,

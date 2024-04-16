@@ -1,7 +1,6 @@
 <%- include("partials/header.ejs") %>
 <%- include("partials/navbar.ejs") %>
 
-<% errLogin = "" %>
 
 <div class="container col-6">
     <div class="card mt-4">
@@ -10,7 +9,6 @@
         </div>
         <div class="card-body">
             <form action="/authenticate" method="post">
-                <p style="color:red; font-size: 0.7em;"><%=errLogin%></p>
                 <label for="">E-mail:</label>
                 <input type="text" name="email" id="email" class="form-control"><br>
                 <label for="">Senha:</label>

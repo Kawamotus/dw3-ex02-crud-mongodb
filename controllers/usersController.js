@@ -53,11 +53,18 @@ router.post("/authenticate", (req, res) =>{
             const verificacao = bcrypt.compareSync(password, user.password);
 
             if(verificacao){
+                req.session.user = {
+                    id: user._id,
+                    email: user.email
+                }
                 res.redirect("/");
             }
             else{
                 res.send("nao deu certo");
             }
+        }
+        else{
+            res.send("Usuário não existe, <a href='/login'> retornar </a>")
         }
     });
 });

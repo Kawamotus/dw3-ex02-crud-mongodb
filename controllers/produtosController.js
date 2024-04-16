@@ -1,8 +1,9 @@
 import express from 'express';
 const router = express.Router();
 import ProdutoService from '../services/ProdutoService.js';
+import Auth from "../middleware/Auth.js";
 
-router.get('/produtos', (req, res)=>{
+router.get('/produtos', Auth, (req, res)=>{
     let titulo = "Produtos";
     let ativo = 4;
 
@@ -16,7 +17,7 @@ router.get('/produtos', (req, res)=>{
     
 });
 
-router.post("/produtos/novoProduto", (req, res) => {
+router.post("/produtos/novoProduto", Auth, (req, res) => {
     ProdutoService.Create(
         req.body.nome,
         req.body.preco,
@@ -25,13 +26,13 @@ router.post("/produtos/novoProduto", (req, res) => {
     res.redirect("/produtos");
 });
 
-router.get("/produtos/excluir/:id", (req, res) => {
+router.get("/produtos/excluir/:id", Auth, (req, res) => {
     const id = req.params.id;
     ProdutoService.Delete(id);
     res.redirect("/produtos");
 });
 
-router.get("/produtos/editar/:id", (req, res) => {
+router.get("/produtos/editar/:id", Auth, (req, res) => {
     let ativo = 4;
     const id = req.params.id;
     ProdutoService.SelectOne(id).then((produto) =>{
@@ -46,7 +47,7 @@ router.get("/produtos/editar/:id", (req, res) => {
     });;
 });
 
-router.post("/produtos/update/:id", (req, res) =>{
+router.post("/produtos/update/:id", Auth, (req, res) =>{
     ProdutoService.Update(
         req.params.id,
         req.body.nome,
