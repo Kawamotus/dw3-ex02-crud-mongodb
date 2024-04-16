@@ -46,7 +46,7 @@
                 <td>R$<%= produto.preco %></td>
                 <td><%= produto.categoria %></td>
                 <td>
-                    <a href="/produtos/excluir/<%=produto._id%>" class="btn btn-danger">Excluir</a>
+                    <a href="/produtos/excluir/<%=produto._id%>" onclick="return confirm('Deseja realmente excluir <%=produto.nome %>?')" class="btn btn-danger" >Excluir</a>
                     <a href="/produtos/editar/<%=produto._id%>" class="btn btn-info">Editar</a>
                 </td>
             </tr>
