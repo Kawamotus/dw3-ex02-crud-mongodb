@@ -9,7 +9,8 @@
           <a class="nav-item nav-link <%= ativo == 2 ? 'active' : '' %>" href="/clientes">Clientes</a>
           <a class="nav-item nav-link <%= ativo == 3 ? 'active' : '' %>" href="/pedidos">Pedidos</a>
           <a class="nav-item nav-link <%= ativo == 4 ? 'active' : '' %>" href="/produtos">Produtos</a>
-          <a class="nav-item nav-link <%= ativo == 5 ? 'active' : '' %>" href="/login">Login</a>
+
+          <a class="nav-item nav-link <%= ativo == 5 ? 'active' : '' %>" href="/<%= typeof loggedOut == 'undefined' ? 'logout' : 'login'%>"><%=typeof loggedOut == 'undefined' ? 'Logout' : 'Login'%></a>
       </div>
     </div>
   

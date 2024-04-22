@@ -9,6 +9,8 @@ import pedidosController from "./controllers/pedidosController.js";
 import produtosController from "./controllers/produtosController.js";
 import usersController from "./controllers/usersController.js";
 
+import Auth from './middleware/Auth.js';
+
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
@@ -31,7 +33,7 @@ app.use("/", usersController);
 mongoose.connect("mongodb://localhost:27017/sistemaLoja");
 
 
-app.get('/', (req, res) =>{
+app.get('/', Auth, (req, res) =>{
     let titulo = "Home";
     let ativo = 1;
     const produtosHome = [

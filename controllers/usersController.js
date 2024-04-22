@@ -69,5 +69,10 @@ router.post("/authenticate", (req, res) =>{
     });
 });
 
+router.get("/logout", (req, res) => {
+    req.session.user = undefined;
+    res.redirect("/");
+});
+
 
 export default router;

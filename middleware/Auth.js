@@ -9,7 +9,8 @@ function Auth(req, res, next) {
         res.render("login", {
             ativo: ativo,
             errLogin: errLogin,
-            titulo: titulo
+            titulo: titulo,
+            loggedOut: true
         });
     }
 }
