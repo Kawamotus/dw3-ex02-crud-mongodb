@@ -8,7 +8,9 @@
         </div>
         <div class="card-body">
             <form action="/createUser" method="post">
-                <p><%=mensagem ? mensagem : "" %></p>
+                <% if(messages.danger){ %>
+                    <div class="alert alert-danger"><%=messages.danger%></div>
+                <%}%>
                 <label for="">E-mail</label>
                 <input type="email" name="email" id="email" class="form-control" required><br>
                 <label for="">Senha</label>

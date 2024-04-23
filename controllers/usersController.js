@@ -11,7 +11,8 @@ router.get("/login", (req, res) =>{
     res.render("login", {
         ativo: ativo,
         errLogin: errLogin,
-        titulo: titulo
+        titulo: titulo,
+        loggedOut: true
     });
 });
 
@@ -22,7 +23,9 @@ router.get("/cadastro", (req, res) => {
     res.render("cadastro", {
         titulo: titulo,
         ativo: ativo,
-        mensagem: mensagem
+        mensagem: mensagem,
+        loggedOut: true,
+        messages: req.flash()
     });
 });
 
@@ -39,7 +42,8 @@ router.post("/createUser", (req, res) => {
             res.redirect("/login");
         }
         else{
-            res.send(`E-mail já cadastrado!<br><a href="/cadastro">Tentar novamente </a>`);
+            req.flash("danger", "Usuário já cadastrado, execute o login :D");
+            res.redirect("/cadastro");
         }
     });
 });
@@ -57,14 +61,18 @@ router.post("/authenticate", (req, res) =>{
                     id: user._id,
                     email: user.email
                 }
+                //criando a flash-message
+                req.flash('success', 'Login efetuado com sucesso!');
                 res.redirect("/");
             }
             else{
-                res.send("nao deu certo");
+                req.flash('danger', 'Usuário ou senha incorretos!');
+                res.redirect("/login");
             }
         }
         else{
-            res.send("Usuário não existe, <a href='/login'> retornar </a>")
+            req.flash('danger', 'Usuário inexistente');
+            res.redirect("/login");
         }
     });
 });

@@ -7,6 +7,9 @@
         <div class="card-header">
             <h1>Login</h1>
         </div>
+        <% if(messages.danger){ %>
+            <div class="alert alert-danger"><%=messages.danger%></div>
+        <%}%>
         <div class="card-body">
             <form action="/authenticate" method="post">
                 <label for="">E-mail:</label>
@@ -21,4 +24,4 @@
     </div>
 </div>
 
-<%- include("partials/footer.ejs"); %>
+<%- include("partials/footer.ejs") %>

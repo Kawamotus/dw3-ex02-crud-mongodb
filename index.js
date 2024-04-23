@@ -11,6 +11,10 @@ import usersController from "./controllers/usersController.js";
 
 import Auth from './middleware/Auth.js';
 
+import flash from "express-flash";
+
+app.use(flash());
+
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
@@ -61,7 +65,8 @@ app.get('/', Auth, (req, res) =>{
     res.render('index', {
         titulo: titulo,
         ativo: ativo,
-        produtosHome: produtosHome
+        produtosHome: produtosHome,
+        messages: req.flash()
     });
 });
 
